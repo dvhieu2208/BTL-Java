@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
  * @author My Laptop
  */
 import javax.swing.table.DefaultTableModel;
+import model.TinhTienDien;
 public class KhachHangForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(KhachHangForm.class.getName());
@@ -45,12 +46,13 @@ public class KhachHangForm extends javax.swing.JFrame {
         while(rs.next()){
 
             int soDien = rs.getInt("ChiSoMoi") - rs.getInt("ChiSoCu");
-
+            int soTien = TinhTienDien.tinhTienDien(soDien);
             model.addRow(new Object[]{
                 rs.getInt("MaHoaDon"),
                 soDien,
                 rs.getInt("TrangThai") == 0 ? "Chưa thanh toán" : "Đã thanh toán",
-                rs.getDate("NgayThanhToan")
+                rs.getDate("NgayThanhToan"),
+                soTien
             });
         }
 
@@ -122,17 +124,17 @@ public class KhachHangForm extends javax.swing.JFrame {
         tblHoaDon.setBackground(new java.awt.Color(204, 204, 204));
         tblHoaDon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "MaHD", "Số Điện", "Trạng Thái", "Ngày Thanh Toán"
+                "MaHD", "Số Điện", "Trạng Thái", "Ngày Thanh Toán", "Số Tiền"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {

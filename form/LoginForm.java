@@ -89,7 +89,7 @@ public class LoginForm extends javax.swing.JFrame {
         Anhnen.setBackground(new java.awt.Color(255, 255, 255));
         Anhnen.setForeground(new java.awt.Color(153, 153, 153));
         Anhnen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Đăng Nhập.png"))); // NOI18N
-        AnhNen.add(Anhnen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 300));
+        AnhNen.add(Anhnen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 310));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -68,16 +68,23 @@ public void loadKhachHang(){
         jScrollPane1 = new javax.swing.JScrollPane();
         tblKhachHang = new javax.swing.JTable();
         btnKhoiPhuc = new javax.swing.JButton();
-        btnQuayLai = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        btnTrangChu = new javax.swing.JButton();
+        btnKhachHang = new javax.swing.JButton();
+        btnTaiKhoan = new javax.swing.JButton();
+        btnHoaDon = new javax.swing.JButton();
+        btnThoat = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblKhachHang.setBackground(new java.awt.Color(204, 204, 204));
+        tblKhachHang.setBackground(new java.awt.Color(255, 255, 255));
         tblKhachHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -99,28 +106,71 @@ public void loadKhachHang(){
         });
         jScrollPane1.setViewportView(tblKhachHang);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 165, 465, 262));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 165, 570, 290));
 
+        btnKhoiPhuc.setBackground(new java.awt.Color(51, 204, 0));
+        btnKhoiPhuc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnKhoiPhuc.setForeground(new java.awt.Color(255, 255, 255));
         btnKhoiPhuc.setText("Khôi phục");
         btnKhoiPhuc.addActionListener(this::btnKhoiPhucActionPerformed);
-        jPanel1.add(btnKhoiPhuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 86, -1, -1));
+        jPanel1.add(btnKhoiPhuc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
 
-        btnQuayLai.setText("Quay lại");
-        btnQuayLai.addActionListener(this::btnQuayLaiActionPerformed);
-        jPanel1.add(btnQuayLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 86, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Danh Sách Khách Hàng");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 127, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("LỊCH SỬ XÓA");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 16, -1, -1));
+        jLabel2.setText("LỊCH SỬ XÓA KHÁCH HÀNG");
+        jPanel2.add(jLabel2, new java.awt.GridBagConstraints());
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/7.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 60));
+
+        jPanel3.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel3.setLayout(new java.awt.GridBagLayout());
+
+        btnTrangChu.setBackground(new java.awt.Color(0, 51, 204));
+        btnTrangChu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTrangChu.setForeground(new java.awt.Color(255, 255, 255));
+        btnTrangChu.setText("Trang Chủ");
+        btnTrangChu.addActionListener(this::btnTrangChuActionPerformed);
+        jPanel3.add(btnTrangChu, new java.awt.GridBagConstraints());
+
+        btnKhachHang.setBackground(new java.awt.Color(0, 51, 204));
+        btnKhachHang.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnKhachHang.setForeground(new java.awt.Color(255, 255, 255));
+        btnKhachHang.setText("Khách Hàng");
+        btnKhachHang.addActionListener(this::btnKhachHangActionPerformed);
+        jPanel3.add(btnKhachHang, new java.awt.GridBagConstraints());
+
+        btnTaiKhoan.setBackground(new java.awt.Color(0, 51, 204));
+        btnTaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
+        btnTaiKhoan.setText("Tài Khoản");
+        btnTaiKhoan.addActionListener(this::btnTaiKhoanActionPerformed);
+        jPanel3.add(btnTaiKhoan, new java.awt.GridBagConstraints());
+
+        btnHoaDon.setBackground(new java.awt.Color(0, 51, 204));
+        btnHoaDon.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHoaDon.setForeground(new java.awt.Color(255, 255, 255));
+        btnHoaDon.setText("Hóa Đơn");
+        btnHoaDon.addActionListener(this::btnHoaDonActionPerformed);
+        jPanel3.add(btnHoaDon, new java.awt.GridBagConstraints());
+
+        btnThoat.setBackground(new java.awt.Color(0, 51, 204));
+        btnThoat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setText("Đăng Xuất");
+        btnThoat.addActionListener(this::btnThoatActionPerformed);
+        jPanel3.add(btnThoat, new java.awt.GridBagConstraints());
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 580, 50));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 580, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,7 +180,7 @@ public void loadKhachHang(){
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
         );
 
         pack();
@@ -178,11 +228,46 @@ public void loadKhachHang(){
     }
     }//GEN-LAST:event_btnKhoiPhucActionPerformed
 
-    private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
-       QLKhachHangForm f = new QLKhachHangForm();
-       f.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_btnQuayLaiActionPerformed
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+        // TODO add your handling code here:
+        int chon = JOptionPane.showConfirmDialog(this,
+            "Bạn có muốn đăng xuất không?");
+
+        if (chon == JOptionPane.YES_OPTION) {
+
+            LoginForm login = new LoginForm();
+            login.setVisible(true);
+
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnThoatActionPerformed
+
+    private void btnHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHoaDonActionPerformed
+        TaoHDForm f = new TaoHDForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHoaDonActionPerformed
+
+    private void btnTaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaiKhoanActionPerformed
+        // TODO add your handling code here:
+        QLTaiKhoanForm f = new QLTaiKhoanForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTaiKhoanActionPerformed
+
+    private void btnKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhachHangActionPerformed
+        // TODO add your handling code here:
+        QLKhachHangForm f = new QLKhachHangForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnKhachHangActionPerformed
+
+    private void btnTrangChuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrangChuActionPerformed
+        // TODO add your handling code here:
+        AdminForm f = new AdminForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTrangChuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,13 +295,19 @@ public void loadKhachHang(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHoaDon;
+    private javax.swing.JButton btnKhachHang;
     private javax.swing.JButton btnKhoiPhuc;
-    private javax.swing.JButton btnQuayLai;
+    private javax.swing.JButton btnTaiKhoan;
+    private javax.swing.JButton btnThoat;
+    private javax.swing.JButton btnTrangChu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tblKhachHang;
     // End of variables declaration//GEN-END:variables
 }

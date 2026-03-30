@@ -6,7 +6,7 @@ package form;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import database.ConnectDB;
-import form.QLKhachHangForm;
+import javax.swing.JFrame;
 /**
  *
  * @author My Laptop
@@ -22,6 +22,7 @@ public class LoginForm extends javax.swing.JFrame {
         initComponents();
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +32,7 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         AnhNen = new javax.swing.JPanel();
         txtUser = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
@@ -39,57 +41,83 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnDangKy = new javax.swing.JButton();
-        Anhnen = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        AnhNen.setBackground(new java.awt.Color(255, 255, 255));
         AnhNen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtUser.setBackground(new java.awt.Color(204, 255, 255));
+        txtUser.setBackground(new java.awt.Color(255, 255, 255));
         txtUser.addActionListener(this::txtUserActionPerformed);
         AnhNen.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 200, -1));
 
-        btnLogin.setBackground(new java.awt.Color(204, 204, 204));
-        btnLogin.setForeground(new java.awt.Color(0, 0, 0));
+        btnLogin.setBackground(new java.awt.Color(0, 102, 204));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Đăng Nhập");
         btnLogin.addActionListener(this::btnLoginActionPerformed);
         AnhNen.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
 
-        btnHuy.setBackground(new java.awt.Color(204, 204, 204));
-        btnHuy.setForeground(new java.awt.Color(0, 0, 0));
-        btnHuy.setText("Hủy");
+        btnHuy.setBackground(new java.awt.Color(153, 0, 51));
+        btnHuy.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHuy.setForeground(new java.awt.Color(255, 255, 255));
+        btnHuy.setText("Cancel");
         btnHuy.addActionListener(this::btnHuyActionPerformed);
-        AnhNen.add(btnHuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
+        AnhNen.add(btnHuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
 
-        txtPass.setBackground(new java.awt.Color(204, 255, 255));
+        txtPass.setBackground(new java.awt.Color(255, 255, 255));
         txtPass.addActionListener(this::txtPassActionPerformed);
         AnhNen.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 200, -1));
 
-        jLabel1.setBackground(new java.awt.Color(51, 204, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 204, 255));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Đăng Nhập");
-        AnhNen.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
+        AnhNen.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Tên Đăng Nhập");
-        AnhNen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jLabel2.setText("Username:");
+        AnhNen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Mật Khẩu");
+        jLabel3.setText("Password:");
         AnhNen.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
-        btnDangKy.setBackground(new java.awt.Color(204, 204, 204));
-        btnDangKy.setForeground(new java.awt.Color(0, 0, 0));
-        btnDangKy.setText("Đăng Ký");
-        btnDangKy.addActionListener(this::btnDangKyActionPerformed);
-        AnhNen.add(btnDangKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Anhnen.setBackground(new java.awt.Color(255, 255, 255));
-        Anhnen.setForeground(new java.awt.Color(153, 153, 153));
-        Anhnen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Đăng Nhập.png"))); // NOI18N
-        AnhNen.add(Anhnen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 310));
+        jLabel4.setBackground(new java.awt.Color(204, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Quản Lý Khách Hàng Tiêu Thụ Điện");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 70));
+
+        AnhNen.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 70));
+
+        jLabel5.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel5.setText("Quên mật khẩu?");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        AnhNen.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
+
+        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel6.setText("Chưa có tài khoản?Đăng ký");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        AnhNen.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
+        AnhNen.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 400, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,9 +127,7 @@ public class LoginForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AnhNen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(AnhNen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
         );
 
         pack();
@@ -114,6 +140,10 @@ public class LoginForm extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
       String user = txtUser.getText();
         String pass = txtPass.getText();
+        if(user.isEmpty() || pass.isEmpty()){
+    JOptionPane.showMessageDialog(null, "Chưa nhập đầy đủ thông tin!");
+    return; 
+}
 
 try{
 
@@ -159,11 +189,15 @@ try{
     txtPass.setText("");
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void btnDangKyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKyActionPerformed
-      DangKyForm f = new DangKyForm();
-      f.setVisible(true);
-      this.dispose(); 
-    }//GEN-LAST:event_btnDangKyActionPerformed
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        DangKyForm f = new DangKyForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -192,13 +226,17 @@ try{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AnhNen;
-    private javax.swing.JLabel Anhnen;
-    private javax.swing.JButton btnDangKy;
     private javax.swing.JButton btnHuy;
     private javax.swing.JButton btnLogin;
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables

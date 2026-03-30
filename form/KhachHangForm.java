@@ -104,7 +104,6 @@ public class KhachHangForm extends javax.swing.JFrame {
         btnDangXuat = new javax.swing.JButton();
         lblMaKH = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,12 +142,12 @@ public class KhachHangForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblHoaDon);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, 337));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 590, 337));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Danh Sách Hóa Đơn");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
+        jLabel3.setText("Hóa Đơn");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 70, -1));
 
         btnDangXuat.setText("Đăng Xuất");
         btnDangXuat.addActionListener(this::btnDangXuatActionPerformed);
@@ -156,23 +155,20 @@ public class KhachHangForm extends javax.swing.JFrame {
 
         lblMaKH.setForeground(new java.awt.Color(255, 255, 255));
         lblMaKH.setText("MaKH :");
-        jPanel1.add(lblMaKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 78, 25));
+        jPanel1.add(lblMaKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 78, 25));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("HỆ THỐNG QUẢN LÝ KHÁCH HÀNG TIÊU THỤ ĐIỆN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/4.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, 5, 500, 670));
+        jLabel1.setText("QUẢN LÝ KHÁCH HÀNG TIÊU THỤ ĐIỆN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,7 +260,6 @@ ps.setInt(2, MaHoaDon);
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMaKH;

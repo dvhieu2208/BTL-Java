@@ -78,65 +78,79 @@ txtChiSoMoi.setText(tblHoaDon.getValueAt(row,2).toString());
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        btnTaoHoaDon = new javax.swing.JButton();
-        txtMaKH = new javax.swing.JTextField();
-        txtChiSoCu = new javax.swing.JTextField();
         txtChiSoMoi = new javax.swing.JTextField();
+        btnTaoHoaDon = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblHoaDon = new javax.swing.JTable();
+        txtMaKH = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtChiSoCu = new javax.swing.JTextField();
         btnSua = new javax.swing.JButton();
-        btnQuayLai = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnTrangChu = new javax.swing.JButton();
+        btnKhachHang = new javax.swing.JButton();
+        btnTaiKhoan = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        btnThoat = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel4.setBackground(new java.awt.Color(0, 102, 204));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("TẠO HÓA ĐƠN");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 15, -1, 36));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("MaKH :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 51, -1));
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Chỉ Số Cũ :");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 64, -1));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 620, 50));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Chỉ Số Mới :");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 70, 20));
+        txtChiSoMoi.setBackground(new java.awt.Color(255, 255, 255));
+        txtChiSoMoi.addActionListener(this::txtChiSoMoiActionPerformed);
+        jPanel3.add(txtChiSoMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 195, -1));
 
-        btnTaoHoaDon.setText("Tạo hóa đơn");
+        btnTaoHoaDon.setBackground(new java.awt.Color(51, 204, 0));
+        btnTaoHoaDon.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTaoHoaDon.setForeground(new java.awt.Color(255, 255, 255));
+        btnTaoHoaDon.setText("Xác Nhận");
         btnTaoHoaDon.addActionListener(this::btnTaoHoaDonActionPerformed);
-        getContentPane().add(btnTaoHoaDon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        jPanel3.add(btnTaoHoaDon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 560, -1, -1));
 
-        txtMaKH.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(txtMaKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 57, 195, -1));
-
-        txtChiSoCu.setBackground(new java.awt.Color(204, 204, 204));
-        txtChiSoCu.addActionListener(this::txtChiSoCuActionPerformed);
-        getContentPane().add(txtChiSoCu, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 110, 195, -1));
-
-        txtChiSoMoi.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(txtChiSoMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 162, 195, -1));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 102, 204));
         jLabel5.setText("DANH SÁCH HÓA ĐƠN");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 263, -1, -1));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
+
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("MaKH:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 51, -1));
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Chỉ Số Mới:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 70, -1));
 
         tblHoaDon.setBackground(new java.awt.Color(204, 204, 204));
         tblHoaDon.setModel(new javax.swing.table.DefaultTableModel(
@@ -160,18 +174,79 @@ txtChiSoMoi.setText(tblHoaDon.getValueAt(row,2).toString());
         });
         jScrollPane1.setViewportView(tblHoaDon);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 291, 375, 311));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 610, 311));
 
+        txtMaKH.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(txtMaKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 195, -1));
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Chỉ Số Cũ:");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 64, -1));
+
+        txtChiSoCu.setBackground(new java.awt.Color(255, 255, 255));
+        txtChiSoCu.addActionListener(this::txtChiSoCuActionPerformed);
+        jPanel3.add(txtChiSoCu, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 195, -1));
+
+        btnSua.setBackground(new java.awt.Color(0, 204, 0));
+        btnSua.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSua.setForeground(new java.awt.Color(255, 255, 255));
         btnSua.setText("Sửa");
         btnSua.addActionListener(this::btnSuaActionPerformed);
-        getContentPane().add(btnSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
+        jPanel3.add(btnSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 560, -1, -1));
 
-        btnQuayLai.setText("Quay lại");
-        btnQuayLai.addActionListener(this::btnQuayLaiActionPerformed);
-        getContentPane().add(btnQuayLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/3.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -24, 390, 650));
+        btnTrangChu.setBackground(new java.awt.Color(0, 51, 204));
+        btnTrangChu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTrangChu.setForeground(new java.awt.Color(255, 255, 255));
+        btnTrangChu.setText("Trang Chủ");
+        btnTrangChu.addActionListener(this::btnTrangChuActionPerformed);
+        jPanel2.add(btnTrangChu, new java.awt.GridBagConstraints());
+
+        btnKhachHang.setBackground(new java.awt.Color(0, 51, 204));
+        btnKhachHang.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnKhachHang.setForeground(new java.awt.Color(255, 255, 255));
+        btnKhachHang.setText("Khách Hàng");
+        btnKhachHang.addActionListener(this::btnKhachHangActionPerformed);
+        jPanel2.add(btnKhachHang, new java.awt.GridBagConstraints());
+
+        btnTaiKhoan.setBackground(new java.awt.Color(0, 51, 204));
+        btnTaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
+        btnTaiKhoan.setText("Tài Khoản");
+        btnTaiKhoan.addActionListener(this::btnTaiKhoanActionPerformed);
+        jPanel2.add(btnTaiKhoan, new java.awt.GridBagConstraints());
+
+        jButton4.setBackground(new java.awt.Color(0, 51, 204));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Hóa Đơn");
+        jButton4.addActionListener(this::jButton4ActionPerformed);
+        jPanel2.add(jButton4, new java.awt.GridBagConstraints());
+
+        btnThoat.setBackground(new java.awt.Color(0, 51, 204));
+        btnThoat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setText("Đăng Xuất");
+        btnThoat.addActionListener(this::btnThoatActionPerformed);
+        jPanel2.add(btnThoat, new java.awt.GridBagConstraints());
+
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 610, 50));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 610, 10));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -264,11 +339,50 @@ txtChiSoMoi.setText(tblHoaDon.getValueAt(row,2).toString());
     }
     }//GEN-LAST:event_btnSuaActionPerformed
 
-    private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
-       AdminForm f = new AdminForm();
-       f.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_btnQuayLaiActionPerformed
+    private void txtChiSoMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtChiSoMoiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtChiSoMoiActionPerformed
+
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+        // TODO add your handling code here:
+        int chon = JOptionPane.showConfirmDialog(this,
+            "Bạn có muốn đăng xuất không?");
+
+        if (chon == JOptionPane.YES_OPTION) {
+
+            LoginForm login = new LoginForm();
+            login.setVisible(true);
+
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnThoatActionPerformed
+
+    private void btnKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhachHangActionPerformed
+        QLKhachHangForm f = new QLKhachHangForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnKhachHangActionPerformed
+
+    private void btnTrangChuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrangChuActionPerformed
+        // TODO add your handling code here:
+        AdminForm f = new AdminForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTrangChuActionPerformed
+
+    private void btnTaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaiKhoanActionPerformed
+        // TODO add your handling code here:
+        QLTaiKhoanForm f = new QLTaiKhoanForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTaiKhoanActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        TaoHDForm f = new TaoHDForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,17 +410,24 @@ txtChiSoMoi.setText(tblHoaDon.getValueAt(row,2).toString());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnQuayLai;
+    private javax.swing.JButton btnKhachHang;
     private javax.swing.JButton btnSua;
+    private javax.swing.JButton btnTaiKhoan;
     private javax.swing.JButton btnTaoHoaDon;
+    private javax.swing.JButton btnThoat;
+    private javax.swing.JButton btnTrangChu;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tblHoaDon;
     private javax.swing.JTextField txtChiSoCu;
     private javax.swing.JTextField txtChiSoMoi;

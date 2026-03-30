@@ -62,28 +62,41 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnXoa = new javax.swing.JButton();
-        btnQuayLai = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        btnLichSuXoa = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTaiKhoan = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        btnLichSuXoa = new javax.swing.JButton();
+        btnXoa = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        btnTrangChu = new javax.swing.JButton();
+        btnKhachHang = new javax.swing.JButton();
+        btnTaiKhoan = new javax.swing.JButton();
+        btnHoaDon = new javax.swing.JButton();
+        btnThoat = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnXoa.setText("Xóa");
-        btnXoa.addActionListener(this::btnXoaActionPerformed);
-        getContentPane().add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnQuayLai.setText("Quay Lại");
-        btnQuayLai.addActionListener(this::btnQuayLaiActionPerformed);
-        getContentPane().add(btnQuayLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+        btnLichSuXoa.setBackground(new java.awt.Color(51, 204, 0));
+        btnLichSuXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLichSuXoa.setForeground(new java.awt.Color(255, 255, 255));
+        btnLichSuXoa.setText(" Lịch Sử Xóa");
+        btnLichSuXoa.setActionCommand(" Lịch Sử Xóa");
+        btnLichSuXoa.addActionListener(this::btnLichSuXoaActionPerformed);
+        jPanel2.add(btnLichSuXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 500, -1, -1));
 
-        tblTaiKhoan.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel1.setText("Danh Sách Tài Khoản");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
+
+        tblTaiKhoan.setBackground(new java.awt.Color(255, 255, 255));
         tblTaiKhoan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -105,36 +118,83 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblTaiKhoan);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 136, 440, 301));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 590, 301));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Danh Sách Tài Khoản");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
+        btnXoa.setBackground(new java.awt.Color(153, 0, 51));
+        btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnXoa.setForeground(new java.awt.Color(255, 255, 255));
+        btnXoa.setText("Xóa");
+        btnXoa.addActionListener(this::btnXoaActionPerformed);
+        jPanel2.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, -1, -1));
 
-        btnLichSuXoa.setText(" Lịch Sử Xóa TK");
-        btnLichSuXoa.addActionListener(this::btnLichSuXoaActionPerformed);
-        getContentPane().add(btnLichSuXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("QUẢN LÝ TÀI KHOẢN");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+        jPanel3.add(jLabel2, new java.awt.GridBagConstraints());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 16, -1, -1));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 50));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/5.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, -1));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
+
+        btnTrangChu.setBackground(new java.awt.Color(0, 51, 204));
+        btnTrangChu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTrangChu.setForeground(new java.awt.Color(255, 255, 255));
+        btnTrangChu.setText("Trang Chủ");
+        btnTrangChu.addActionListener(this::btnTrangChuActionPerformed);
+        jPanel1.add(btnTrangChu, new java.awt.GridBagConstraints());
+
+        btnKhachHang.setBackground(new java.awt.Color(0, 51, 204));
+        btnKhachHang.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnKhachHang.setForeground(new java.awt.Color(255, 255, 255));
+        btnKhachHang.setText("Khách Hàng");
+        btnKhachHang.addActionListener(this::btnKhachHangActionPerformed);
+        jPanel1.add(btnKhachHang, new java.awt.GridBagConstraints());
+
+        btnTaiKhoan.setBackground(new java.awt.Color(0, 51, 204));
+        btnTaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
+        btnTaiKhoan.setText("Tài Khoản");
+        btnTaiKhoan.setActionCommand("Tài Khoản");
+        btnTaiKhoan.addActionListener(this::btnTaiKhoanActionPerformed);
+        jPanel1.add(btnTaiKhoan, new java.awt.GridBagConstraints());
+
+        btnHoaDon.setBackground(new java.awt.Color(0, 51, 204));
+        btnHoaDon.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHoaDon.setForeground(new java.awt.Color(255, 255, 255));
+        btnHoaDon.setText("Hóa Đơn");
+        btnHoaDon.addActionListener(this::btnHoaDonActionPerformed);
+        jPanel1.add(btnHoaDon, new java.awt.GridBagConstraints());
+
+        btnThoat.setBackground(new java.awt.Color(0, 51, 204));
+        btnThoat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setText("Đăng Xuất");
+        btnThoat.addActionListener(this::btnThoatActionPerformed);
+        jPanel1.add(btnThoat, new java.awt.GridBagConstraints());
+
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 590, 50));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 590, 20));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
-        AdminForm f = new AdminForm();
-        f.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnQuayLaiActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         int row = tblTaiKhoan.getSelectedRow();
@@ -184,6 +244,48 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_btnLichSuXoaActionPerformed
 
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+        // TODO add your handling code here:
+        int chon = JOptionPane.showConfirmDialog(this,
+            "Bạn có muốn đăng xuất không?");
+
+        if (chon == JOptionPane.YES_OPTION) {
+
+            LoginForm login = new LoginForm();
+            login.setVisible(true);
+
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnThoatActionPerformed
+
+    private void btnHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHoaDonActionPerformed
+        // TODO add your handling code here:
+        TaoHDForm f = new TaoHDForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHoaDonActionPerformed
+
+    private void btnTaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaiKhoanActionPerformed
+        // TODO add your handling code here:
+         QLTaiKhoanForm f = new QLTaiKhoanForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTaiKhoanActionPerformed
+
+    private void btnKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhachHangActionPerformed
+        // TODO add your handling code here:
+        QLKhachHangForm f = new QLKhachHangForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnKhachHangActionPerformed
+
+    private void btnTrangChuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrangChuActionPerformed
+        // TODO add your handling code here:
+        AdminForm f = new AdminForm();
+        f.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTrangChuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -210,14 +312,20 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHoaDon;
+    private javax.swing.JButton btnKhachHang;
     private javax.swing.JButton btnLichSuXoa;
-    private javax.swing.JButton btnQuayLai;
+    private javax.swing.JButton btnTaiKhoan;
+    private javax.swing.JButton btnThoat;
+    private javax.swing.JButton btnTrangChu;
     private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tblTaiKhoan;
     // End of variables declaration//GEN-END:variables
 }

@@ -221,7 +221,7 @@ public class DangKyForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "CCCD không hợp lệ");
             return;
         }
-        if(!email.matches("^[A-Za-z0-9._%+-]+@gmail\\.com$")){
+        if(!email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}$")){
             JOptionPane.showMessageDialog(this, "Email không hợp lệ!");
             return;
         }

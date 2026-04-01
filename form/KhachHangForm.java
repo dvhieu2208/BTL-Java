@@ -5,6 +5,7 @@
 package form;
 import database.ConnectDB;
 import java.sql.*;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 /**
  *
@@ -23,10 +24,9 @@ public class KhachHangForm extends javax.swing.JFrame {
     public KhachHangForm(int maKH) {
         initComponents();
         this.maKH = maKH;
-
-    loadPhuongThuc();
     loadHoaDon(maKH);
     loadThongTinKH(maKH);
+    loadPhuongThuc();
     }
     public void loadHoaDon(int maKH){
 
@@ -65,17 +65,17 @@ public class KhachHangForm extends javax.swing.JFrame {
     try{
         Connection conn = ConnectDB.getConnection();
 
-        String sql = "SELECT DISTINCT MaPT, TenPT FROM PHUONG_THUC_THANH_TOAN";
+        String sql = "SELECT MaPT, TenPT FROM PHUONG_THUC_THANH_TOAN";
 
         PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
-
         cboPhuongThuc.removeAllItems();
+DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
 
         while(rs.next()){
             cboPhuongThuc.addItem(rs.getInt("MaPT") + " - " + rs.getString("TenPT"));
         }
-
+    cboPhuongThuc.setModel(model);
     }catch(Exception e){
         e.printStackTrace();
     }

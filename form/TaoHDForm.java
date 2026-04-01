@@ -152,7 +152,8 @@ txtChiSoMoi.setText(tblHoaDon.getValueAt(row,2).toString());
         jLabel4.setText("Chỉ Số Mới:");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 70, -1));
 
-        tblHoaDon.setBackground(new java.awt.Color(204, 204, 204));
+        tblHoaDon.setBackground(new java.awt.Color(255, 255, 255));
+        tblHoaDon.setForeground(new java.awt.Color(0, 0, 0));
         tblHoaDon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},

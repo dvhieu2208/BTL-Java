@@ -87,7 +87,6 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         btnLichSuXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnLichSuXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnLichSuXoa.setText(" Lịch Sử Xóa");
-        btnLichSuXoa.setActionCommand(" Lịch Sử Xóa");
         btnLichSuXoa.addActionListener(this::btnLichSuXoaActionPerformed);
         jPanel2.add(btnLichSuXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 500, -1, -1));
 
@@ -97,6 +96,7 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
 
         tblTaiKhoan.setBackground(new java.awt.Color(255, 255, 255));
+        tblTaiKhoan.setForeground(new java.awt.Color(0, 0, 0));
         tblTaiKhoan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -159,7 +159,6 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         btnTaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
         btnTaiKhoan.setText("Tài Khoản");
-        btnTaiKhoan.setActionCommand("Tài Khoản");
         btnTaiKhoan.addActionListener(this::btnTaiKhoanActionPerformed);
         jPanel1.add(btnTaiKhoan, new java.awt.GridBagConstraints());
 

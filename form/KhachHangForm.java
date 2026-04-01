@@ -246,7 +246,7 @@ public class KhachHangForm extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 153));
         jLabel6.setText("QUẢN LÝ KHÁCH HÀNG TIÊU THỤ ĐIỆN");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
 
         cboPhuongThuc.setBackground(new java.awt.Color(255, 255, 255));
         cboPhuongThuc.setForeground(new java.awt.Color(0, 0, 0));

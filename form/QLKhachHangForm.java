@@ -82,6 +82,8 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         btnTaiKhoan = new javax.swing.JButton();
         btnHoaDon = new javax.swing.JButton();
         btnThoat = new javax.swing.JButton();
+        txtCCCD = new javax.swing.JTextField();
+        btnTimKiem = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -95,7 +97,7 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         btnXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnXoa.setText("Xóa");
         btnXoa.addActionListener(this::btnXoaActionPerformed);
-        jPanel1.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, -1, -1));
+        jPanel1.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 570, -1, -1));
 
         btnLichSuXoa.setBackground(new java.awt.Color(0, 153, 51));
         btnLichSuXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -103,7 +105,7 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         btnLichSuXoa.setText("Lịch Sử Xóa KH");
         btnLichSuXoa.setActionCommand("Lịch Sử Xóa");
         btnLichSuXoa.addActionListener(this::btnLichSuXoaActionPerformed);
-        jPanel1.add(btnLichSuXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, -1, -1));
+        jPanel1.add(btnLichSuXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 570, -1, -1));
 
         tblKhachHang.setBackground(new java.awt.Color(255, 255, 255));
         tblKhachHang.setForeground(new java.awt.Color(0, 0, 0));
@@ -128,12 +130,12 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblKhachHang);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 580, 323));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 580, 323));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setText("Danh Sách Khách Hàng");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
 
@@ -148,7 +150,7 @@ public class QLKhachHangForm extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +160,7 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 60));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 580, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 580, 10));
 
         jPanel3.setBackground(new java.awt.Color(0, 51, 153));
         jPanel3.setLayout(new java.awt.GridBagLayout());
@@ -200,6 +202,18 @@ public class QLKhachHangForm extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 580, 50));
 
+        txtCCCD.setBackground(new java.awt.Color(255, 255, 255));
+        txtCCCD.setForeground(new java.awt.Color(0, 0, 0));
+        txtCCCD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtCCCD.addActionListener(this::txtCCCDActionPerformed);
+        jPanel1.add(txtCCCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 250, 20));
+
+        btnTimKiem.setBackground(new java.awt.Color(255, 255, 255));
+        btnTimKiem.setForeground(new java.awt.Color(0, 0, 0));
+        btnTimKiem.setText("Tìm kiếm");
+        btnTimKiem.addActionListener(this::btnTimKiemActionPerformed);
+        jPanel1.add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, 20));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -208,7 +222,7 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
         );
 
         pack();
@@ -291,6 +305,56 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnThoatActionPerformed
 
+    private void txtCCCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCCCDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCCCDActionPerformed
+
+    private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
+        // TODO add your handling code here:
+         String cccd = txtCCCD.getText().trim();
+
+    if(cccd.isEmpty()){
+        JOptionPane.showMessageDialog(this, "Nhập CCCD cần tìm!");
+        return;
+    }
+
+    try {
+        Connection conn = ConnectDB.getConnection();
+
+        String sql = "SELECT * FROM KHACH_HANG WHERE CCCD = ? and TrangThai = 1";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, cccd);
+
+        ResultSet rs = ps.executeQuery();
+
+        DefaultTableModel model = (DefaultTableModel) tblKhachHang.getModel();
+        model.setRowCount(0);
+
+        boolean found = false;
+
+        while(rs.next()){
+            found = true;
+
+            model.addRow(new Object[]{
+                rs.getInt("MaKH"),
+                rs.getString("HoTen"),
+                rs.getString("SDT"),
+                rs.getString("CCCD"),
+                rs.getString("Email"),
+                rs.getString("DiaChi"),
+                rs.getInt("TrangThai") == 1 ? "Hoạt động" : "Đã xóa"
+            });
+        }
+
+        if(!found){
+            JOptionPane.showMessageDialog(this, "Không tìm thấy khách hàng!");
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    }//GEN-LAST:event_btnTimKiemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -322,6 +386,7 @@ public class QLKhachHangForm extends javax.swing.JFrame {
     private javax.swing.JButton btnLichSuXoa;
     private javax.swing.JButton btnTaiKhoan;
     private javax.swing.JButton btnThoat;
+    private javax.swing.JButton btnTimKiem;
     private javax.swing.JButton btnTrangChu;
     private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
@@ -333,5 +398,6 @@ public class QLKhachHangForm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tblKhachHang;
+    private javax.swing.JTextField txtCCCD;
     // End of variables declaration//GEN-END:variables
 }

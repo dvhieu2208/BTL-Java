@@ -70,12 +70,13 @@ public class KhachHangForm extends javax.swing.JFrame {
         PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         cboPhuongThuc.removeAllItems();
-DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
 
-        while(rs.next()){
-            cboPhuongThuc.addItem(rs.getInt("MaPT") + " - " + rs.getString("TenPT"));
-        }
-    cboPhuongThuc.setModel(model);
+while(rs.next()){
+    model.addElement(rs.getInt("MaPT") + " - " + rs.getString("TenPT"));
+}
+
+cboPhuongThuc.setModel(model);
     }catch(Exception e){
         e.printStackTrace();
     }

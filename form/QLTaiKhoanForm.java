@@ -77,6 +77,8 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         btnHoaDon = new javax.swing.JButton();
         btnThoat = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        txtMaKH = new javax.swing.JTextField();
+        btnTimKiem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,12 +90,12 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         btnLichSuXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnLichSuXoa.setText(" Lịch Sử Xóa");
         btnLichSuXoa.addActionListener(this::btnLichSuXoaActionPerformed);
-        jPanel2.add(btnLichSuXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 500, -1, -1));
+        jPanel2.add(btnLichSuXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Danh Sách Tài Khoản");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
 
         tblTaiKhoan.setBackground(new java.awt.Color(255, 255, 255));
         tblTaiKhoan.setForeground(new java.awt.Color(0, 0, 0));
@@ -118,14 +120,14 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblTaiKhoan);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 590, 301));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 590, 301));
 
         btnXoa.setBackground(new java.awt.Color(153, 0, 51));
         btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnXoa.setText("Xóa");
         btnXoa.addActionListener(this::btnXoaActionPerformed);
-        jPanel2.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, -1, -1));
+        jPanel2.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 520, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 204));
         jPanel3.setLayout(new java.awt.GridBagLayout());
@@ -177,7 +179,19 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         jPanel1.add(btnThoat, new java.awt.GridBagConstraints());
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 590, 50));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 590, 20));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 590, 20));
+
+        txtMaKH.setBackground(new java.awt.Color(255, 255, 255));
+        txtMaKH.setForeground(new java.awt.Color(0, 0, 0));
+        txtMaKH.setMinimumSize(new java.awt.Dimension(40, 20));
+        txtMaKH.setPreferredSize(new java.awt.Dimension(10, 20));
+        jPanel2.add(txtMaKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 230, 30));
+
+        btnTimKiem.setBackground(new java.awt.Color(255, 255, 255));
+        btnTimKiem.setForeground(new java.awt.Color(0, 0, 0));
+        btnTimKiem.setText("Tìm kiếm");
+        btnTimKiem.addActionListener(this::btnTimKiemActionPerformed);
+        jPanel2.add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,7 +203,9 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -285,6 +301,51 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnTrangChuActionPerformed
 
+    private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
+        // TODO add your handling code here:
+        String ma = txtMaKH.getText().trim();
+
+    if(ma.isEmpty()){
+        JOptionPane.showMessageDialog(this, "Nhập MaKH cần tìm!");
+        return;
+    }
+
+    try {
+    Connection conn = ConnectDB.getConnection();
+
+    String sql = "SELECT * FROM TAI_KHOAN WHERE MaKH = ? AND TrangThai = 1";
+    PreparedStatement ps = conn.prepareStatement(sql);
+    ps.setString(1, ma);
+
+    ResultSet rs = ps.executeQuery();
+
+    DefaultTableModel model = (DefaultTableModel) tblTaiKhoan.getModel();
+    model.setRowCount(0);
+
+    boolean found = false;
+
+    while (rs.next()) {
+        found = true;
+
+        model.addRow(new Object[]{
+            rs.getInt("MaTK"),
+            rs.getString("TenDangNhap"),
+            rs.getString("MatKhau"),
+            rs.getString("VaiTro"),
+             rs.getInt("MaKH"),
+            rs.getInt("TrangThai") == 1 ? "Hoạt động" : "Đã khóa"
+        });
+    }
+
+    if (!found) {
+        JOptionPane.showMessageDialog(this, "Không tìm thấy tài khoản theo MaKH!");
+    }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    }//GEN-LAST:event_btnTimKiemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -316,6 +377,7 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
     private javax.swing.JButton btnLichSuXoa;
     private javax.swing.JButton btnTaiKhoan;
     private javax.swing.JButton btnThoat;
+    private javax.swing.JButton btnTimKiem;
     private javax.swing.JButton btnTrangChu;
     private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
@@ -326,5 +388,6 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tblTaiKhoan;
+    private javax.swing.JTextField txtMaKH;
     // End of variables declaration//GEN-END:variables
 }

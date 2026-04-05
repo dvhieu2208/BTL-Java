@@ -82,7 +82,7 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         btnTaiKhoan = new javax.swing.JButton();
         btnHoaDon = new javax.swing.JButton();
         btnThoat = new javax.swing.JButton();
-        txtCCCD = new javax.swing.JTextField();
+        txtMaKH = new javax.swing.JTextField();
         btnTimKiem = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
@@ -202,11 +202,11 @@ public class QLKhachHangForm extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 580, 50));
 
-        txtCCCD.setBackground(new java.awt.Color(255, 255, 255));
-        txtCCCD.setForeground(new java.awt.Color(0, 0, 0));
-        txtCCCD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtCCCD.addActionListener(this::txtCCCDActionPerformed);
-        jPanel1.add(txtCCCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 250, 20));
+        txtMaKH.setBackground(new java.awt.Color(255, 255, 255));
+        txtMaKH.setForeground(new java.awt.Color(0, 0, 0));
+        txtMaKH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtMaKH.addActionListener(this::txtMaKHActionPerformed);
+        jPanel1.add(txtMaKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 250, 20));
 
         btnTimKiem.setBackground(new java.awt.Color(255, 255, 255));
         btnTimKiem.setForeground(new java.awt.Color(0, 0, 0));
@@ -305,25 +305,25 @@ public class QLKhachHangForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnThoatActionPerformed
 
-    private void txtCCCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCCCDActionPerformed
+    private void txtMaKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaKHActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCCCDActionPerformed
+    }//GEN-LAST:event_txtMaKHActionPerformed
 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
         // TODO add your handling code here:
-         String cccd = txtCCCD.getText().trim();
+         String ma = txtMaKH.getText().trim();
 
-    if(cccd.isEmpty()){
-        JOptionPane.showMessageDialog(this, "Nhập CCCD cần tìm!");
+    if(ma.isEmpty()){
+        JOptionPane.showMessageDialog(this, "Nhập MaKH cần tìm!");
         return;
     }
 
     try {
         Connection conn = ConnectDB.getConnection();
 
-        String sql = "SELECT * FROM KHACH_HANG WHERE CCCD = ? and TrangThai = 1";
+        String sql = "SELECT * FROM KHACH_HANG WHERE MaKH = ? and TrangThai = 1";
         PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setString(1, cccd);
+        ps.setString(1, ma);
 
         ResultSet rs = ps.executeQuery();
 
@@ -398,6 +398,6 @@ public class QLKhachHangForm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tblKhachHang;
-    private javax.swing.JTextField txtCCCD;
+    private javax.swing.JTextField txtMaKH;
     // End of variables declaration//GEN-END:variables
 }

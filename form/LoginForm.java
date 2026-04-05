@@ -6,7 +6,6 @@ package form;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import database.ConnectDB;
-import javax.swing.JFrame;
 /**
  *
  * @author My Laptop
@@ -138,27 +137,33 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUserActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-      String user = txtUser.getText();
-        String pass = txtPass.getText();
-        if(user.isEmpty() || pass.isEmpty()){
+      String user = txtUser.getText().trim();
+      String pass = txtPass.getText().trim();
+
+if(user.isEmpty() || pass.isEmpty()){
     JOptionPane.showMessageDialog(null, "Chưa nhập đầy đủ thông tin!");
     return; 
 }
 
 try{
-
     Connection conn = ConnectDB.getConnection();
 
     String sql = "SELECT * FROM TAI_KHOAN WHERE TenDangNhap=? AND MatKhau=?";
-
     PreparedStatement ps = conn.prepareStatement(sql);
 
-    ps.setString(1,user);
-    ps.setString(2,pass);
+    ps.setString(1, user);
+    ps.setString(2, pass);
 
     ResultSet rs = ps.executeQuery();
 
     if(rs.next()){
+
+        int trangThai = rs.getInt("TrangThai");
+
+        if(trangThai == 0){
+            JOptionPane.showMessageDialog(this, "Tài khoản không tồn tại");
+            return;
+        }
 
         int vaitro = rs.getInt("VaiTro");
         int maKH = rs.getInt("MaKH");
@@ -173,7 +178,12 @@ try{
 
     }else{
         JOptionPane.showMessageDialog(this,"Sai tài khoản hoặc mật khẩu");
+        JOptionPane.showMessageDialog(this,"Vui lòng nhập lại");
     }
+
+    rs.close();
+    ps.close();
+    conn.close();
 
 }catch(Exception e){
     e.printStackTrace();

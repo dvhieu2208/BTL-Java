@@ -37,7 +37,7 @@ public class AdminForm extends javax.swing.JFrame {
         btnQuanLyTaiKhoan = new javax.swing.JButton();
         btnHoaDon = new javax.swing.JButton();
         btnThoat = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,8 +96,8 @@ public class AdminForm extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 540, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Thiết-kế-chưa-có-tên.gif"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/z7695644713127_0d624ba2c49b52842b9c25d8ad307ca8.jpg"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,7 +180,7 @@ public class AdminForm extends javax.swing.JFrame {
     private javax.swing.JButton btnThoat;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

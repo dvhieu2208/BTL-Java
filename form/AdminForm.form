@@ -184,10 +184,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/image/Thi&#x1ebf;t-k&#x1ebf;-ch&#x1b0;a-c&#xf3;-t&#xea;n.gif"/>
+              <Image iconType="3" name="/image/z7695644713127_0d624ba2c49b52842b9c25d8ad307ca8.jpg"/>
             </Property>
           </Properties>
           <Constraints>

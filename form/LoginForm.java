@@ -52,6 +52,7 @@ public class LoginForm extends javax.swing.JFrame {
         AnhNen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtUser.setBackground(new java.awt.Color(255, 255, 255));
+        txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.addActionListener(this::txtUserActionPerformed);
         AnhNen.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 200, -1));
 
@@ -70,6 +71,7 @@ public class LoginForm extends javax.swing.JFrame {
         AnhNen.add(btnHuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
 
         txtPass.setBackground(new java.awt.Color(255, 255, 255));
+        txtPass.setForeground(new java.awt.Color(0, 0, 0));
         txtPass.addActionListener(this::txtPassActionPerformed);
         AnhNen.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 200, -1));
 
@@ -99,7 +101,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         AnhNen.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 70));
 
-        jLabel5.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 204));
         jLabel5.setText("Quên mật khẩu?");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -108,7 +110,7 @@ public class LoginForm extends javax.swing.JFrame {
         });
         AnhNen.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
-        jLabel6.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 204));
         jLabel6.setText("Chưa có tài khoản?Đăng ký");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -161,7 +163,7 @@ try{
         int trangThai = rs.getInt("TrangThai");
 
         if(trangThai == 0){
-            JOptionPane.showMessageDialog(this, "Tài khoản không tồn tại");
+            JOptionPane.showMessageDialog(this, "Tài khoản này đã bị khóa");
             return;
         }
 

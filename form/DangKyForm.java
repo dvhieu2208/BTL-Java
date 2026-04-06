@@ -68,21 +68,21 @@ public class DangKyForm extends javax.swing.JFrame {
         txtHoTen.setBackground(new java.awt.Color(255, 255, 255));
         txtHoTen.setForeground(new java.awt.Color(0, 0, 0));
         txtHoTen.addActionListener(this::txtHoTenActionPerformed);
-        jPanel1.add(txtHoTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 179, -1));
+        jPanel1.add(txtHoTen, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 210, -1));
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Phone number:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 85, 15));
 
         txtSDT.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtSDT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 179, -1));
+        jPanel1.add(txtSDT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 210, -1));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("ID:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, 20));
 
         txtCCCD.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtCCCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 179, -1));
+        jPanel1.add(txtCCCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 210, -1));
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Email:");
@@ -90,18 +90,20 @@ public class DangKyForm extends javax.swing.JFrame {
 
         txtEmail.setBackground(new java.awt.Color(255, 255, 255));
         txtEmail.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 179, -1));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 210, -1));
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Address:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 50, -1));
 
         txtDiaChi.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtDiaChi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 179, -1));
+        txtDiaChi.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtDiaChi, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 210, -1));
 
         txtUser.setBackground(new java.awt.Color(255, 255, 255));
+        txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.addActionListener(this::txtUserActionPerformed);
-        jPanel1.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 179, -1));
+        jPanel1.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 210, -1));
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Username:");
@@ -112,14 +114,16 @@ public class DangKyForm extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
 
         txtPass.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 130, -1));
+        txtPass.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 150, -1));
 
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Confirm:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
 
         txtConfirm.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 130, -1));
+        txtConfirm.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 150, -1));
 
         btnDangKy.setBackground(new java.awt.Color(0, 102, 204));
         btnDangKy.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -144,39 +148,34 @@ public class DangKyForm extends javax.swing.JFrame {
         jLabel10.setText("Quản Lý Khách Hàng Tiêu Thụ Điện");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 70));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 70));
 
         jLabel6.setBackground(new java.awt.Color(204, 204, 204));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 204));
         jLabel6.setText("ĐĂNG KÝ ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 204, 255));
+        jLabel11.setForeground(new java.awt.Color(0, 51, 204));
         jLabel11.setText("Quay lại trang chủ->");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel11MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 410, 20));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 450, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-                .addGap(6, 6, 6))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
         );
 
         pack();
@@ -221,7 +220,7 @@ public class DangKyForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "CCCD không hợp lệ");
             return;
         }
-        if(!email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}$")){
+        if(!email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$")){
             JOptionPane.showMessageDialog(this, "Email không hợp lệ!");
             return;
         }

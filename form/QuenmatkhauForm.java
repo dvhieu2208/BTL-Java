@@ -45,7 +45,6 @@ public class QuenmatkhauForm extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jPasswordField2 = new javax.swing.JPasswordField();
         btnXacNhan = new javax.swing.JButton();
-        btnThoat = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,14 +118,7 @@ public class QuenmatkhauForm extends javax.swing.JFrame {
         btnXacNhan.setForeground(new java.awt.Color(255, 255, 255));
         btnXacNhan.setText("Xác Nhận");
         btnXacNhan.addActionListener(this::btnXacNhanActionPerformed);
-        jPanel3.add(btnXacNhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
-
-        btnThoat.setBackground(new java.awt.Color(102, 102, 102));
-        btnThoat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
-        btnThoat.setText("Quay lại đăng nhập");
-        btnThoat.addActionListener(this::btnThoatActionPerformed);
-        jPanel3.add(btnThoat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, -1));
+        jPanel3.add(btnXacNhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 383, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,7 +157,7 @@ public class QuenmatkhauForm extends javax.swing.JFrame {
 
     try {
         Connection conn = ConnectDB.getConnection();
-        String checkSql = "SELECT * FROM TaiKhoan WHERE username=?";
+        String checkSql = "SELECT * FROM TAI_KHOAN WHERE TenDangNhap=?";
 PreparedStatement psCheck = conn.prepareStatement(checkSql);
 psCheck.setString(1, username);
 
@@ -204,14 +196,10 @@ if(!rs.next()){
         e.printStackTrace();
         JOptionPane.showMessageDialog(this, "Lỗi kết nối database!");
     }
-    }//GEN-LAST:event_btnXacNhanActionPerformed
-
-    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
-        // TODO add your handling code here:
-        LoginForm f = new LoginForm();
+    LoginForm f = new LoginForm();
         f.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnThoatActionPerformed
+    }//GEN-LAST:event_btnXacNhanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,7 +227,6 @@ if(!rs.next()){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnThoat;
     private javax.swing.JButton btnXacNhan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

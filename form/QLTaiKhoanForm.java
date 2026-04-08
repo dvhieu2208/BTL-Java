@@ -6,6 +6,7 @@ package form;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import database.ConnectDB;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
  *
@@ -20,6 +21,8 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
      */
     public QLTaiKhoanForm() {
         initComponents();
+        setLocationRelativeTo(null); // căn giữa
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         loadTaiKhoan();
     }
     public void loadTaiKhoan(){
@@ -83,19 +86,16 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnLichSuXoa.setBackground(new java.awt.Color(51, 204, 0));
         btnLichSuXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnLichSuXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnLichSuXoa.setText(" Lịch Sử Xóa");
         btnLichSuXoa.addActionListener(this::btnLichSuXoaActionPerformed);
-        jPanel2.add(btnLichSuXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Danh Sách Tài Khoản");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
 
         tblTaiKhoan.setBackground(new java.awt.Color(255, 255, 255));
         tblTaiKhoan.setForeground(new java.awt.Color(0, 0, 0));
@@ -120,14 +120,11 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblTaiKhoan);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 590, 301));
-
         btnXoa.setBackground(new java.awt.Color(153, 0, 51));
         btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnXoa.setText("Xóa");
         btnXoa.addActionListener(this::btnXoaActionPerformed);
-        jPanel2.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 520, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 204));
         jPanel3.setLayout(new java.awt.GridBagLayout());
@@ -137,8 +134,6 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("QUẢN LÝ TÀI KHOẢN");
         jPanel3.add(jLabel2, new java.awt.GridBagConstraints());
-
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 50));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 204));
         jPanel1.setLayout(new java.awt.GridBagLayout());
@@ -178,33 +173,73 @@ public class QLTaiKhoanForm extends javax.swing.JFrame {
         btnThoat.addActionListener(this::btnThoatActionPerformed);
         jPanel1.add(btnThoat, new java.awt.GridBagConstraints());
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 590, 50));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 590, 20));
-
         txtMaKH.setBackground(new java.awt.Color(255, 255, 255));
         txtMaKH.setForeground(new java.awt.Color(0, 0, 0));
         txtMaKH.setMinimumSize(new java.awt.Dimension(40, 20));
         txtMaKH.setPreferredSize(new java.awt.Dimension(10, 20));
-        jPanel2.add(txtMaKH, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 230, 30));
 
         btnTimKiem.setBackground(new java.awt.Color(255, 255, 255));
         btnTimKiem.setForeground(new java.awt.Color(0, 0, 0));
         btnTimKiem.setText("Tìm kiếm");
         btnTimKiem.addActionListener(this::btnTimKiemActionPerformed);
-        jPanel2.add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, 30));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(btnTimKiem)
+                .addGap(1, 1, 1)
+                .addComponent(txtMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(jLabel1))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(btnXoa)
+                .addGap(138, 138, 138)
+                .addComponent(btnLichSuXoa))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnXoa)
+                    .addComponent(btnLichSuXoa)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 

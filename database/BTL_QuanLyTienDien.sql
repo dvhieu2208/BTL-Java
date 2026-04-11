@@ -1,0 +1,146 @@
+
+GO 
+
+USE QuanLyTienDien
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE dbo.KHACH_HANG
+(
+    MaKH INT IDENTITY(1,1) NOT NULL,
+    HoTen NVARCHAR(100) NOT NULL,
+    SDT VARCHAR(15),
+    CCCD VARCHAR(20) UNIQUE,
+    Email NVARCHAR(100),
+    DiaChi NVARCHAR(200),
+
+    CONSTRAINT PK_KHACH_HANG PRIMARY KEY CLUSTERED (MaKH ASC)
+)
+GO
+
+CREATE TABLE dbo.TAI_KHOAN
+(
+    MaTK INT IDENTITY(1,1) NOT NULL,
+    TenDangNhap VARCHAR(50) NOT NULL,
+    MatKhau VARCHAR(100) NOT NULL,
+    VaiTro INT NOT NULL,
+    MaKH INT NULL,
+
+    CONSTRAINT PK_TAI_KHOAN PRIMARY KEY CLUSTERED (MaTK ASC),
+
+    CONSTRAINT UQ_TAIKHOAN_TENDANGNHAP UNIQUE (TenDangNhap),
+
+    CONSTRAINT FK_TAIKHOAN_KHACHHANG
+        FOREIGN KEY (MaKH)
+        REFERENCES dbo.KHACH_HANG(MaKH)
+)
+GO
+
+CREATE TABLE dbo.PHUONG_THUC_THANH_TOAN
+(
+    MaPT INT IDENTITY(1,1) NOT NULL,
+    TenPT NVARCHAR(100) NOT NULL,
+
+    CONSTRAINT PK_PHUONG_THUC_THANH_TOAN
+        PRIMARY KEY CLUSTERED (MaPT ASC)
+)
+GO
+
+
+CREATE TABLE dbo.HOA_DON
+(
+    MaHoaDon INT IDENTITY(1,1) NOT NULL,
+    MaKH INT NOT NULL,
+    MaPT INT NULL,
+
+    ChiSoCu INT NOT NULL,
+    ChiSoMoi INT NOT NULL,
+
+    TrangThai INT NOT NULL DEFAULT 0, 
+    NgayThanhToan DATE NULL,
+
+    CONSTRAINT PK_HOA_DON
+        PRIMARY KEY CLUSTERED (MaHoaDon ASC),
+
+    CONSTRAINT FK_HOADON_KHACHHANG
+        FOREIGN KEY (MaKH)
+        REFERENCES dbo.KHACH_HANG(MaKH),
+
+    CONSTRAINT FK_HOADON_PHUONGTHUC
+        FOREIGN KEY (MaPT)
+        REFERENCES dbo.PHUONG_THUC_THANH_TOAN(MaPT),
+
+    CONSTRAINT CK_CHISO
+        CHECK (ChiSoMoi >= ChiSoCu)
+)
+GO
+
+
+GO
+INSERT [dbo].[KHACH_HANG] ([HoTen], [SDT], [CCCD], [Email], [DiaChi]) VALUES (N'Nguyễn Văn An', '0901234567', '123456789012', 'an@gmail.com', N'Hà Nội')
+INSERT [dbo].[KHACH_HANG] ([HoTen], [SDT], [CCCD], [Email], [DiaChi]) VALUES (N'Trần Thị Bình', '0912345678', '234567890123', 'binh@gmail.com', N'Hải Phòng')
+INSERT [dbo].[KHACH_HANG] ([HoTen], [SDT], [CCCD], [Email], [DiaChi]) VALUES (N'Lê Văn Cường', '0923456789', '345678901234', 'cuong@gmail.com', N'Đà Nẵng')
+INSERT [dbo].[KHACH_HANG] ([HoTen], [SDT], [CCCD], [Email], [DiaChi]) VALUES (N'Phạm Thị Dung', '0934567890', '456789012345', 'dung@gmail.com', N'Hồ Chí Minh')
+INSERT [dbo].[KHACH_HANG] ([HoTen], [SDT], [CCCD], [Email], [DiaChi]) VALUES (N'Hoàng Văn Em', '0945678901', '567890123456', 'em@gmail.com', N'Cần Thơ')
+GO
+
+GO
+INSERT [dbo].[TAI_KHOAN] ([TenDangNhap], [MatKhau], [VaiTro], [MaKH]) VALUES ('admin','123456',0,NULL)
+
+INSERT [dbo].[TAI_KHOAN] ([TenDangNhap], [MatKhau], [VaiTro], [MaKH]) VALUES ('an123','123456',1,1)
+INSERT [dbo].[TAI_KHOAN] ([TenDangNhap], [MatKhau], [VaiTro], [MaKH]) VALUES ('binh123','123456',1,2)
+INSERT [dbo].[TAI_KHOAN] ([TenDangNhap], [MatKhau], [VaiTro], [MaKH]) VALUES ('cuong123','123456',1,3)
+INSERT [dbo].[TAI_KHOAN] ([TenDangNhap], [MatKhau], [VaiTro], [MaKH]) VALUES ('dung123','123456',1,4)
+INSERT [dbo].[TAI_KHOAN] ([TenDangNhap], [MatKhau], [VaiTro], [MaKH]) VALUES ('em123','123456',1,5)
+GO
+
+GO
+INSERT [dbo].[PHUONG_THUC_THANH_TOAN] ([TenPT]) VALUES (N'Thanh toán trực tiếp')
+INSERT [dbo].[PHUONG_THUC_THANH_TOAN] ([TenPT]) VALUES (N'Chuyển khoản')
+INSERT [dbo].[PHUONG_THUC_THANH_TOAN] ([TenPT]) VALUES (N'Ví điện tử')
+INSERT [dbo].[PHUONG_THUC_THANH_TOAN] ([TenPT]) VALUES (N'Thanh toán online')
+GO
+
+GO
+INSERT [dbo].[HOA_DON] ([MaKH], [MaPT], [ChiSoCu], [ChiSoMoi], [TrangThai], [NgayThanhToan]) VALUES (1,2,1200,1300,1,CAST(N'2026-01-10' AS Date))
+INSERT [dbo].[HOA_DON] ([MaKH], [MaPT], [ChiSoCu], [ChiSoMoi], [TrangThai], [NgayThanhToan]) VALUES (2,NULL,1500,1600,0,NULL)
+INSERT [dbo].[HOA_DON] ([MaKH], [MaPT], [ChiSoCu], [ChiSoMoi], [TrangThai], [NgayThanhToan]) VALUES (3,3,2000,2100,1,CAST(N'2026-01-15' AS Date))
+INSERT [dbo].[HOA_DON] ([MaKH], [MaPT], [ChiSoCu], [ChiSoMoi], [TrangThai], [NgayThanhToan]) VALUES (4,NULL,1800,1900,0,NULL)
+INSERT [dbo].[HOA_DON] ([MaKH], [MaPT], [ChiSoCu], [ChiSoMoi], [TrangThai], [NgayThanhToan]) VALUES (5,1,1000,1100,1,CAST(N'2026-01-20' AS Date))
+GO
+ALTER TABLE KHACH_HANG
+ADD TrangThai INT DEFAULT 1
+
+ALTER TABLE [dbo].[TAI_KHOAN] WITH CHECK 
+ADD CONSTRAINT [FK_TAIKHOAN_KHACHHANG] 
+FOREIGN KEY([MaKH])
+REFERENCES [dbo].[KHACH_HANG] ([MaKH])
+GO
+
+ALTER TABLE [dbo].[TAI_KHOAN] CHECK CONSTRAINT [FK_TAIKHOAN_KHACHHANG]
+GO
+
+
+ALTER TABLE [dbo].[HOA_DON] WITH CHECK 
+ADD CONSTRAINT [FK_HOADON_KHACHHANG] 
+FOREIGN KEY([MaKH])
+REFERENCES [dbo].[KHACH_HANG] ([MaKH])
+GO
+
+ALTER TABLE [dbo].[HOA_DON] CHECK CONSTRAINT [FK_HOADON_KHACHHANG]
+GO
+
+
+ALTER TABLE [dbo].[HOA_DON] WITH CHECK 
+ADD CONSTRAINT [FK_HOADON_PHUONGTHUC] 
+FOREIGN KEY([MaPT])
+REFERENCES [dbo].[PHUONG_THUC_THANH_TOAN] ([MaPT])
+GO
+
+ALTER TABLE [dbo].[HOA_DON] CHECK CONSTRAINT [FK_HOADON_PHUONGTHUC]
+GO
